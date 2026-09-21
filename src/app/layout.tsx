@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AISalesAssistant from "@/components/AISalesAssistant";
 import { BUSINESS_NAME, PHONE_NUMBER, ADDRESS } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -76,6 +77,7 @@ export default function RootLayout({
         <Footer />
         <MobileFloatingCTA />
         <WhatsAppButton />
+        <AISalesAssistant />
       </body>
     </html>
   );
