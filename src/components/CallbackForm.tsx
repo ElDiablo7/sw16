@@ -37,23 +37,23 @@ export function CallbackForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-green-50 p-6 rounded-2xl border border-green-100 flex flex-col items-center justify-center text-center h-full min-h-[250px]">
-        <CheckCircle2 className="w-12 h-12 text-[#1B8751] mb-3" />
-        <h3 className="text-xl font-bold text-[#243b53] mb-2">Request Received!</h3>
+      <div className="bg-[#fff9d1] p-6 rounded-2xl border border-green-100 flex flex-col items-center justify-center text-center h-full min-h-[250px]">
+        <CheckCircle2 className="w-12 h-12 text-[#D4AF37] mb-3" />
+        <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Request Received!</h3>
         <p className="text-green-800">We'll call you back shortly.</p>
       </div>
     );
   }
 
-  const inputClass = "w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1B8751]/50 focus:border-[#1B8751] outline-none transition-all";
+  const inputClass = "w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none transition-all";
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full">
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 bg-[#1B8751]/10 rounded-full flex items-center justify-center">
-          <PhoneCall className="w-5 h-5 text-[#1B8751]" />
+        <div className="w-10 h-10 bg-[#D4AF37]/10 rounded-full flex items-center justify-center">
+          <PhoneCall className="w-5 h-5 text-[#D4AF37]" />
         </div>
-        <h3 className="text-xl font-semibold text-[#243b53]">Request a Callback</h3>
+        <h3 className="text-xl font-semibold text-[#1a1a1a]">Request a Callback</h3>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -80,7 +80,7 @@ export function CallbackForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 rounded-lg font-semibold text-white bg-[#243b53] hover:bg-[#1a2a3c] transition-colors disabled:opacity-70 flex items-center justify-center gap-2"
+          className="w-full py-3 rounded-lg font-semibold text-white bg-[#1a1a1a] hover:bg-[#0a0a0a] transition-colors disabled:opacity-70 flex items-center justify-center gap-2"
         >
           {isSubmitting && <Loader2 className="w-4 h-4 animate-spin" />}
           {isSubmitting ? "Sending..." : "Request Callback"}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn, PHONE_NUMBER, PHONE_HREF, BUSINESS_NAME } from "@/lib/utils";
@@ -59,9 +60,16 @@ export default function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 z-50">
-            <span className="text-2xl font-bold text-[#1B8751]">SW16</span>
-            <span className="text-2xl font-bold text-[#243b53]">MOVES</span>
+          <Link href="/" className="flex items-center z-50">
+            <div className="relative w-40 h-12 group perspective-1000">
+              <Image 
+                src="/logo.jpg" 
+                alt="SW16 Moves Logo" 
+                fill 
+                className="object-contain drop-shadow-[0_4px_6px_rgba(212,175,55,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 group-hover:drop-shadow-[0_10px_15px_rgba(212,175,55,0.5)]"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -75,7 +83,7 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 text-gray-700 hover:text-[#1B8751] font-medium transition-colors py-2"
+                  className="flex items-center gap-1 text-gray-700 hover:text-[#D4AF37] font-medium transition-colors py-2"
                 >
                   {link.name}
                   {link.dropdown && <ChevronDown className="w-4 h-4" />}
@@ -96,7 +104,7 @@ export default function Header() {
                           <Link
                             key={dropItem.name}
                             href={dropItem.href}
-                            className="block px-4 py-2 text-gray-700 hover:bg-[#1B8751]/10 hover:text-[#1B8751] transition-colors"
+                            className="block px-4 py-2 text-gray-700 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] transition-colors"
                             onClick={() => setActiveDropdown(null)}
                           >
                             {dropItem.name}
@@ -114,14 +122,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 text-[#243b53] font-bold hover:text-[#1B8751] transition-colors"
+              className="flex items-center gap-2 text-[#1a1a1a] font-bold hover:text-[#D4AF37] transition-colors"
             >
-              <Phone className="w-5 h-5 text-[#1B8751]" />
+              <Phone className="w-5 h-5 text-[#D4AF37]" />
               {PHONE_NUMBER}
             </a>
             <Link
               href="/quote"
-              className="bg-[#1B8751] hover:bg-[#1B8751]/90 text-white px-6 py-2.5 rounded-md font-semibold transition-colors"
+              className="bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-white px-6 py-2.5 rounded-md font-semibold transition-colors"
             >
               Get a Quote
             </Link>
@@ -129,7 +137,7 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden z-50 p-2 text-[#243b53]"
+            className="lg:hidden z-50 p-2 text-[#1a1a1a]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -153,13 +161,13 @@ export default function Header() {
                 <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-2xl font-bold text-[#243b53] block"
+                    className="text-2xl font-bold text-[#1a1a1a] block"
                     onClick={() => !link.dropdown && setMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
                   {link.dropdown && (
-                    <div className="mt-3 ml-4 flex flex-col gap-3 border-l-2 border-[#1B8751]/20 pl-4">
+                    <div className="mt-3 ml-4 flex flex-col gap-3 border-l-2 border-[#D4AF37]/20 pl-4">
                       {link.dropdown.map((dropItem) => (
                         <Link
                           key={dropItem.name}
@@ -178,14 +186,14 @@ export default function Header() {
             <div className="mt-auto mb-10 flex flex-col gap-4">
               <a
                 href={PHONE_HREF}
-                className="flex items-center justify-center gap-2 bg-[#243b53]/5 text-[#243b53] font-bold py-4 rounded-lg text-lg"
+                className="flex items-center justify-center gap-2 bg-[#1a1a1a]/5 text-[#1a1a1a] font-bold py-4 rounded-lg text-lg"
               >
-                <Phone className="w-5 h-5 text-[#1B8751]" />
+                <Phone className="w-5 h-5 text-[#D4AF37]" />
                 Call {PHONE_NUMBER}
               </a>
               <Link
                 href="/quote"
-                className="bg-[#1B8751] text-white font-bold py-4 rounded-lg text-lg text-center"
+                className="bg-[#D4AF37] text-white font-bold py-4 rounded-lg text-lg text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get a Free Quote

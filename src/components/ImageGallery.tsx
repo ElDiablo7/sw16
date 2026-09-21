@@ -51,7 +51,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             className={cn(
               "px-5 py-2 rounded-full text-sm font-medium transition-colors",
               filter === cat 
-                ? "bg-[#1B8751] text-white" 
+                ? "bg-[#D4AF37] text-white" 
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             )}
           >
@@ -74,7 +74,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             onClick={() => openLightbox(index)}
           >
             {/* Placeholder since we don't have real images yet. Real image would be next/image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#1B8751]/20 to-[#243b53]/20 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/20 to-[#1a1a1a]/20 mix-blend-overlay" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-sm">
               <ZoomIn className="w-8 h-8 text-white" />
             </div>
@@ -118,7 +118,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
                 className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1B8751]/30 to-[#243b53]/30 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/30 to-[#1a1a1a]/30 mix-blend-overlay" />
                 <p className="text-white text-lg font-medium absolute bottom-8">{filteredImages[selectedImage].alt}</p>
               </motion.div>
 

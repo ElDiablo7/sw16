@@ -18,7 +18,7 @@ export function TrustBar() {
             const Icon = item.icon;
             return (
               <div key={index} className="flex items-center gap-2 whitespace-nowrap min-w-max text-gray-600">
-                <Icon className="w-5 h-5 text-[#1B8751]" />
+                <Icon className="w-5 h-5 text-[#D4AF37]" />
                 <span className="text-sm font-medium">{item.text}</span>
               </div>
             );

@@ -10,14 +10,14 @@ export default function MobileFloatingCTA() {
       <div className="flex items-stretch p-3 gap-3 h-[72px]">
         <a
           href={PHONE_HREF}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#243b53] hover:bg-[#243b53]/90 text-white rounded-lg font-bold transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#1a1a1a] hover:bg-[#1a1a1a]/90 text-white rounded-lg font-bold transition-colors"
         >
           <Phone className="w-5 h-5" />
           Call Now
         </a>
         <Link
           href="/quote"
-          className="flex-1 flex items-center justify-center bg-[#1B8751] hover:bg-[#1B8751]/90 text-white rounded-lg font-bold transition-colors"
+          className="flex-1 flex items-center justify-center bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-white rounded-lg font-bold transition-colors"
         >
           Get Quote
         </Link>

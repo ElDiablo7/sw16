@@ -27,7 +27,7 @@ const quoteSchema = z.object({
 
 type QuoteFormData = z.infer<typeof quoteSchema>;
 
-const inputClass = "w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1B8751]/50 focus:border-[#1B8751] outline-none transition-all";
+const inputClass = "w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none transition-all";
 const labelClass = "block text-sm font-medium text-gray-700 mb-2";
 const errorClass = "text-red-500 text-xs mt-1";
 
@@ -82,18 +82,18 @@ export function QuoteForm() {
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-2xl mx-auto bg-green-50 rounded-2xl p-8 md:p-12 text-center border border-green-100 shadow-sm"
+        className="max-w-2xl mx-auto bg-[#fff9d1] rounded-2xl p-8 md:p-12 text-center border border-green-100 shadow-sm"
       >
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-[#1B8751]" />
+          <CheckCircle className="w-10 h-10 text-[#D4AF37]" />
         </div>
-        <h2 className="text-3xl font-bold text-[#243b53] mb-4">Quote Requested Successfully!</h2>
+        <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">Quote Requested Successfully!</h2>
         <p className="text-lg text-gray-600 mb-8">
           Thank you for choosing SW16 Moves. We'll be in touch shortly with your personalized quote.
         </p>
         <div className="bg-white p-4 rounded-lg inline-block border border-gray-200">
           <span className="text-sm text-gray-500 uppercase tracking-wide">Your Reference Number</span>
-          <p className="text-2xl font-bold text-[#1B8751] mt-1">{refNumber}</p>
+          <p className="text-2xl font-bold text-[#D4AF37] mt-1">{refNumber}</p>
         </div>
       </motion.div>
     );
@@ -115,8 +115,8 @@ export function QuoteForm() {
                   <label className={labelClass}>Move Type</label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {["House/Flat Removal", "Single Item", "Long Distance", "Furniture Only"].map((type) => (
-                      <label key={type} className="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 has-[:checked]:border-[#1B8751] has-[:checked]:bg-green-50 transition-colors">
-                        <input type="radio" value={type} {...register("moveType")} className="w-4 h-4 text-[#1B8751] focus:ring-[#1B8751]" />
+                      <label key={type} className="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 has-[:checked]:border-[#D4AF37] has-[:checked]:bg-[#fff9d1] transition-colors">
+                        <input type="radio" value={type} {...register("moveType")} className="w-4 h-4 text-[#D4AF37] focus:ring-[#D4AF37]" />
                         <span className="ml-3 font-medium text-gray-700">{type}</span>
                       </label>
                     ))}
@@ -167,8 +167,8 @@ export function QuoteForm() {
                   <label className={labelClass}>Flexibility</label>
                   <div className="grid grid-cols-2 gap-3">
                     {["Exact date", "±1 day", "±1 week", "Flexible"].map((opt) => (
-                      <label key={opt} className="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 has-[:checked]:border-[#1B8751] has-[:checked]:bg-green-50">
-                        <input type="radio" value={opt} {...register("flexibility")} className="w-4 h-4 text-[#1B8751] focus:ring-[#1B8751]" />
+                      <label key={opt} className="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 has-[:checked]:border-[#D4AF37] has-[:checked]:bg-[#fff9d1]">
+                        <input type="radio" value={opt} {...register("flexibility")} className="w-4 h-4 text-[#D4AF37] focus:ring-[#D4AF37]" />
                         <span className="ml-2 text-sm font-medium text-gray-700">{opt}</span>
                       </label>
                     ))}
@@ -263,7 +263,7 @@ export function QuoteForm() {
             <button
               type="button"
               onClick={nextStep}
-              className="px-8 py-3 rounded-full font-semibold text-white bg-[#1B8751] hover:bg-[#126b3e] transition-colors"
+              className="px-8 py-3 rounded-full font-semibold text-white bg-[#D4AF37] hover:bg-[#b28e21] transition-colors"
             >
               Next Step
             </button>
@@ -271,7 +271,7 @@ export function QuoteForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 rounded-full font-semibold text-white bg-[#1B8751] hover:bg-[#126b3e] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-8 py-3 rounded-full font-semibold text-white bg-[#D4AF37] hover:bg-[#b28e21] transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
               {isSubmitting ? "Submitting..." : "Get Free Quote"}

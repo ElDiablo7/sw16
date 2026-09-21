@@ -32,10 +32,10 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
           >
             <button
               onClick={() => toggle(index)}
-              className="w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#1B8751]/20"
+              className="w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/20"
               aria-expanded={isOpen}
             >
-              <span className="font-medium text-[#243b53] pr-4">{item.question}</span>
+              <span className="font-medium text-[#1a1a1a] pr-4">{item.question}</span>
               <ChevronDown 
                 className={cn("w-5 h-5 text-gray-500 transition-transform duration-300 flex-shrink-0", isOpen && "rotate-180")} 
               />
