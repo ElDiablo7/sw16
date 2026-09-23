@@ -71,7 +71,17 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative w-full pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-navy-900 to-brand-900 text-white">
+      <section 
+        className="relative w-full pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden text-white"
+        style={{ 
+          backgroundImage: "url('/images/van-banner.jpg')", 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center' 
+        }}
+      >
+        {/* Dark overlay to ensure text readability against the image */}
+        <div className="absolute inset-0 bg-navy-900/70 z-0"></div>
+        
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
@@ -88,7 +98,7 @@ export default function HomeContent() {
               </motion.h1>
               <motion.p 
                 variants={fadeInUp}
-                className="text-lg md:text-xl text-gray-300 mb-8"
+                className="text-lg md:text-xl text-gray-200 mb-8 font-medium drop-shadow-md"
               >
                 House moves, single items, nationwide coverage — fully insured & professional service at competitive prices.
               </motion.p>
@@ -136,10 +146,6 @@ export default function HomeContent() {
                   <span className="flex items-center gap-1"><Heart className="w-4 h-4 text-brand-500" /> 5-Star Rated</span>
                 </div>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute top-1/2 -translate-y-1/2 -right-12 w-64 h-64 bg-brand-500 rounded-full blur-3xl opacity-20"></div>
-              <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
             </motion.div>
           </div>
         </div>
@@ -353,20 +359,28 @@ export default function HomeContent() {
       </section>
 
       {/* 10. Final CTA section */}
-      <section className="py-24 bg-gradient-to-br from-brand-600 to-brand-800 text-white text-center">
-        <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <section 
+        className="py-24 text-white text-center relative"
+        style={{ 
+          backgroundImage: "url('/images/van-side.jpg')", 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center' 
+        }}
+      >
+        <div className="absolute inset-0 bg-navy-900/80 z-0"></div>
+        <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10">
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Move?</h2>
-            <p className="text-xl text-brand-100 mb-10">Get your free quote in 60 seconds</p>
+            <p className="text-xl text-gray-200 mb-10 drop-shadow-md">Get your free quote in 60 seconds</p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 href="/quote" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg shadow-black/10 text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-500 text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/30 text-lg"
               >
                 Get Free Quote
               </Link>

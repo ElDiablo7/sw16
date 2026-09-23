@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS_NAME,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/van-banner.jpg",
         width: 1200,
         height: 630,
         alt: `${BUSINESS_NAME} Removals`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${BUSINESS_NAME} | London's Trusted Local Removals Company`,
     description: "Professional house and flat removals, single item collections, long distance moves, and furniture transport in London.",
-    images: ["/og-image.jpg"],
+    images: ["/images/van-banner.jpg"],
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
     telephone: "07466228506",
     areaServed: "London",
     priceRange: "££",
-    image: "https://sw16moves.co.uk/logo.png",
+    image: "https://sw16moves.co.uk/images/sw16-logo.jpg",
     knowsAbout: ["Mover", "House Removals", "Furniture Transport", "Man and Van"],
   };
 

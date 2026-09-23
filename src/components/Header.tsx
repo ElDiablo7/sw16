@@ -61,12 +61,12 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center z-50">
-            <div className="relative w-40 h-12 group perspective-1000">
+            <div className="relative w-40 h-16 group perspective-1000">
               <Image 
-                src="/logo.jpg" 
+                src="/images/sw16-logo.jpg" 
                 alt="SW16 Moves Logo" 
                 fill 
-                className="object-contain drop-shadow-[0_4px_6px_rgba(212,175,55,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 group-hover:drop-shadow-[0_10px_15px_rgba(212,175,55,0.5)]"
+                className="object-contain drop-shadow-[0_4px_6px_rgba(212,175,55,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 group-hover:drop-shadow-[0_10px_15px_rgba(212,175,55,0.5)] rounded-full"
                 priority
               />
             </div>
