@@ -15,11 +15,11 @@ export function CTABanner() {
           }}
         >
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-navy-900/80 z-0"></div>
+          <div className="absolute inset-0 bg-navy-900/60 z-0"></div>
           
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Move?</h2>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto drop-shadow-md">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg">Ready to Move?</h2>
+            <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto drop-shadow-lg font-medium">
               Get your free, no-obligation quote in under 60 seconds
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

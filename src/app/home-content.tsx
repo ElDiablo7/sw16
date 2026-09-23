@@ -79,8 +79,8 @@ export default function HomeContent() {
           backgroundPosition: 'center' 
         }}
       >
-        {/* Dark overlay to ensure text readability against the image */}
-        <div className="absolute inset-0 bg-navy-900/70 z-0"></div>
+        {/* Dark gradient overlay to ensure text readability while keeping image visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/70 to-navy-900/30 z-0"></div>
         
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -367,15 +367,15 @@ export default function HomeContent() {
           backgroundPosition: 'center' 
         }}
       >
-        <div className="absolute inset-0 bg-navy-900/80 z-0"></div>
+        <div className="absolute inset-0 bg-navy-900/60 z-0"></div>
         <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10">
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Move?</h2>
-            <p className="text-xl text-gray-200 mb-10 drop-shadow-md">Get your free quote in 60 seconds</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Ready to Move?</h2>
+            <p className="text-xl text-gray-100 mb-10 drop-shadow-lg font-medium">Get your free quote in 60 seconds</p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 

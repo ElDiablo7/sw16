@@ -13,12 +13,12 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block relative w-40 h-16 group perspective-1000">
+            <Link href="/" className="inline-block relative w-32 h-32 group perspective-1000 -ml-2">
               <Image 
                 src="/images/sw16-logo.jpg" 
                 alt="SW16 Moves Logo" 
                 fill 
-                className="object-contain drop-shadow-[0_4px_6px_rgba(212,175,55,0.3)] transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-1 rounded-full"
+                className="object-contain drop-shadow-[0_4px_6px_rgba(212,175,55,0.3)] transition-all duration-500 group-hover:scale-105"
               />
             </Link>
             <p className="text-gray-400 max-w-sm mt-4 leading-relaxed">
