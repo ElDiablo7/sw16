@@ -30,10 +30,17 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Get a Quote', 'Gallery', 'Reviews', 'FAQ', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-[#D4AF37] transition-colors">
-                    {item === 'Home' ? 'Home' : item}
+              {[
+                { name: 'Home', href: '/' },
+                { name: 'Get a Quote', href: '/quote' },
+                { name: 'Gallery', href: '/gallery' },
+                { name: 'Reviews', href: '/reviews' },
+                { name: 'FAQ', href: '/faq' },
+                { name: 'Contact', href: '/contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="hover:text-[#D4AF37] transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -84,8 +91,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <p>&copy; {currentYear} {BUSINESS_NAME}. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

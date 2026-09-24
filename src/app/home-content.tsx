@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Phone, 
   Shield, 
@@ -53,12 +54,12 @@ const reasons = [
 ];
 
 const protectionItems = [
-  "Professional Removals Blankets",
-  "Padded Wraps",
-  "Mattress Protection",
-  "Sofa Protection",
-  "Export Wrap",
-  "Securing Straps"
+  { name: "Professional Removals Blankets", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+  { name: "Padded Wraps", image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+  { name: "Mattress Protection", image: "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+  { name: "Sofa Protection", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+  { name: "Export Wrap", image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" },
+  { name: "Securing Straps", image: "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" }
 ];
 
 const testimonials = [
@@ -90,6 +91,17 @@ export default function HomeContent() {
               variants={staggerContainer}
               className="max-w-2xl"
             >
+              <motion.div variants={fadeInUp} className="mb-8">
+                <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-500 shadow-2xl">
+                  <Image 
+                    src="/images/hero-logo.jpg" 
+                    alt="SW16 Moves Hero Logo" 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
               <motion.h1 
                 variants={fadeInUp}
                 className="text-4xl md:text-6xl font-bold leading-tight mb-6"
@@ -295,9 +307,15 @@ export default function HomeContent() {
                 className="group cursor-pointer"
               >
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl mb-4 overflow-hidden relative">
+                  <Image 
+                    src={item.image} 
+                    alt={item.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                   <div className="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
-                <h4 className="font-semibold text-navy-900 text-center">{item}</h4>
+                <h4 className="font-semibold text-navy-900 text-center">{item.name}</h4>
               </motion.div>
             ))}
           </div>

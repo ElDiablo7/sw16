@@ -7,20 +7,37 @@ export const metadata: Metadata = {
   description: 'See our professional removals team in action. Quality equipment and careful handling.',
 };
 
-// Placeholder component if not in components/
+import Image from "next/image";
+
+// Real gallery images
 const ImageGallery = () => {
-  const images = Array.from({ length: 12 }).map((_, i) => ({
-    id: i,
-    category: i % 3 === 0 ? 'Van & Equipment' : i % 3 === 1 ? 'Moves in Progress' : 'Happy Customers',
-  }));
+  const images = [
+    { id: 1, src: "/images/van-loaded.jpg", category: "Van & Equipment" },
+    { id: 2, src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", category: "Equipment" },
+    { id: 3, src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 4, src: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 5, src: "/images/van-side.jpg", category: "Van & Equipment" },
+    { id: 6, src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 7, src: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 8, src: "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&w=800&q=80", category: "Equipment" },
+    { id: 9, src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80", category: "Happy Customers" },
+    { id: 10, src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 11, src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80", category: "Moves in Progress" },
+    { id: 12, src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80", category: "Happy Customers" },
+  ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {images.map((img) => (
-        <div key={img.id} className="relative aspect-square bg-gray-200 rounded-xl overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-tr from-brand-100 to-gray-200 animate-pulse" />
+        <div key={img.id} className="relative aspect-square bg-gray-200 rounded-xl overflow-hidden group cursor-pointer">
+          <Image 
+            src={img.src}
+            alt={img.category}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+          />
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span className="text-white font-semibold">{img.category}</span>
+            <span className="text-white font-semibold drop-shadow-md">{img.category}</span>
           </div>
         </div>
       ))}
